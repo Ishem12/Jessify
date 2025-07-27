@@ -1,0 +1,119 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Taylor Swift Songs | Jessify</title>
+  <link rel="stylesheet" href="css/style.css" />
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;700&display=swap" rel="stylesheet">
+  <style>
+    body {
+      margin: 0;
+      font-family: 'Inter', sans-serif;
+      background-color: #121212;
+      color: white;
+      padding: 2rem;
+    }
+
+    .header {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      margin-bottom: 2rem;
+    }
+
+    .header h1 {
+      font-size: 2rem;
+      color: #1DB954;
+    }
+
+    .back-link {
+      color: #aaa;
+      text-decoration: none;
+      font-size: 0.9rem;
+      transition: color 0.2s;
+    }
+
+    .back-link:hover {
+      color: #fff;
+    }
+
+    .song-list {
+      list-style: none;
+      padding: 0;
+    }
+
+    .song-list li {
+      background-color: #1e1e1e;
+      margin-bottom: 1rem;
+      padding: 1rem 1.5rem;
+      border-radius: 8px;
+      display: flex;
+      align-items: center;
+      transition: background 0.3s ease;
+    }
+
+    .song-list li:hover {
+      background-color: #2a2a2a;
+    }
+
+    .song-list a {
+      text-decoration: none;
+      color: white;
+      font-size: 1.1rem;
+      flex-grow: 1;
+    }
+
+    .song-list i {
+      margin-right: 1rem;
+      color: #1DB954;
+    }
+  </style>
+</head>
+<body>
+
+  <div class="header">
+    <h1>Taylor Swift Songs that reminds me of you</h1>
+    <a class="back-link" href="index.html">← Back to Jessify</a>
+  </div>
+
+  <ul class="song-list">
+    <li>
+      <i class="fas fa-play-circle"></i>
+      <a href="player.html?song=taylor1.mp3&title=Love Story&cover=love.jpg">Love Story</a>
+    </li>
+    <li>
+      <i class="fas fa-play-circle"></i>
+      <a href="player.html?song=taylor2.mp3&title=Enchanted&cover=enchanted.jpg">Enchanted</a>
+    </li>
+     <li>
+      <i class="fas fa-play-circle"></i>
+      <a href="player.html?song=taylor3.mp3&title=Invisible Strings&cover=Is.jpg">Invisible Strings</a>
+    </li>
+     <li>
+      <i class="fas fa-play-circle"></i>
+      <a href="player.html?song=taylor4.mp3&title=Mine&cover=mine.jpg">Mine</a>
+    </li>
+     <li>
+      <i class="fas fa-play-circle"></i>
+      <a href="player.html?song=taylor5.mp3&title=Lover&cover=lover.jpg">Lover</a>
+    </li>
+    <li>
+      <i class="fas fa-play-circle"></i>
+      <a href="player.html?song=taylor6.mp3&title=Daylight&cover=day.jpg">Daylight</a>
+    </li>
+     <li>
+      <i class="fas fa-play-circle"></i>
+      <a href="player.html?song=taylor7.mp3&title=Sparks Fly&cover=spark.jpg">Sparks Fly</a>
+    </li>
+    <li>
+      <i class="fas fa-play-circle"></i>
+      <a href="player.html?song=taylor8.mp3&title=Paper Rings&cover=paper.jpg">Paper Rings</a>
+    </li>
+  </ul>
+
+  <!-- FontAwesome for play icons -->
+  <script src="https://kit.fontawesome.com/a076d05399.js" crossorigin="anonymous"></script>
+
+</body>
+</html>

@@ -1,0 +1,145 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Jessify – For My Love</title>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+  <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap" rel="stylesheet">
+  <style>
+    :root {
+      --main-bg: #121212;
+      --main-accent: #1db954;
+      --text-light: #ffffff;
+      --text-muted: #b3b3b3;
+    }
+
+    * {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+      font-family: 'Roboto', sans-serif;
+    }
+
+    body {
+      background-color: var(--main-bg);
+      color: var(--text-light);
+      padding: 20px;
+    }
+
+    header {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      margin-bottom: 30px;
+    }
+
+    .logo {
+      font-size: 1.8em;
+      font-weight: bold;
+      color: var(--main-accent);
+    }
+
+    .profile-img {
+      width: 50px;
+      height: 50px;
+      border-radius: 50%;
+      border: 2px solid var(--main-accent);
+    }
+
+    .album-section {
+      display: grid;
+      grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
+      gap: 20px;
+    }
+
+    .album {
+      background-color: #181818;
+      padding: 15px;
+      border-radius: 10px;
+      transition: transform 0.3s;
+      cursor: pointer;
+    }
+
+    .album:hover {
+      transform: scale(1.05);
+      background-color: #282828;
+    }
+
+    .album img {
+      width: 100%;
+      border-radius: 8px;
+    }
+
+    .album-title {
+      margin-top: 10px;
+      font-size: 1.1em;
+    }
+
+    .shuffle-btn {
+      background-color: var(--main-accent);
+      color: white;
+      padding: 10px 25px;
+      font-weight: bold;
+      border: none;
+      border-radius: 25px;
+      font-size: 1em;
+      cursor: pointer;
+      margin-bottom: 30px;
+      transition: background 0.3s;
+    }
+
+    .shuffle-btn:hover {
+      background-color: #1ed760;
+    }
+
+    @media (max-width: 600px) {
+      .album-section {
+        grid-template-columns: repeat(auto-fill, minmax(150px, 1fr));
+      }
+
+      .logo {
+        font-size: 1.2em;
+      }
+    }
+  </style>
+</head>
+
+<body>
+  <header>
+    <div class="logo"><i class="fas fa-music"></i> Jessify</div>
+    <img src="img/jess.jpg" alt="Jess" class="profile-img" />
+  </header>
+
+  <button class="shuffle-btn" onclick="shufflePlay()">Shuffle Play</button>
+
+  <section class="album-section">
+    <div class="album" onclick="location.href='taylor.html'">
+      <img src="taylor.jpg" alt="Taylor Swift">
+      <div class="album-title">Taylor Swift Songs</div>
+    </div>
+    <div class="album" onclick="location.href='lany.html'">
+      <img src="lany.jpg" alt="LANY">
+      <div class="album-title">LANY Songs</div>
+    </div>
+     <div class="album" onclick="location.href='bts.html'">
+      <img src="bts.jpg" alt="Secret">
+      <div class="album-title">Bangtan Sonyeondan</div>
+    </div>
+    <div class="album" onclick="location.href='secret.html'">
+      <img src="secret.jpg" alt="Secret">
+      <div class="album-title">Secret Message 😏</div>
+    </div>
+  </section>
+
+  <script>
+    function shufflePlay() {
+      const pages = ['taylor.html', 'lany.html'];
+      const randomPage = pages[Math.floor(Math.random() * pages.length)];
+      window.location.href = randomPage;
+    }
+  </script>
+</body>
+
+</html>

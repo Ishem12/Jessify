@@ -1,0 +1,130 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Now Playing | Jessify</title>
+  <link rel="stylesheet" href="css/style.css" />
+  <style>
+    body {
+      margin: 0;
+      background-color: #121212;
+      color: #fff;
+      font-family: 'Helvetica Neue', sans-serif;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      align-items: center;
+      height: 100vh;
+      text-align: center;
+    }
+
+    .container {
+      max-width: 400px;
+      width: 100%;
+      padding: 20px;
+    }
+
+    .album-art {
+      width: 300px;
+      height: 300px;
+      border-radius: 50%;
+      background-color: #282828;
+      background-image: url('https://via.placeholder.com/400x400?text=Album+Art');
+      background-size: cover;
+      background-position: center;
+      margin: 0 auto 20px;
+      box-shadow: 0 0 20px rgba(0, 0, 0, 0.6);
+      animation: spin 15s linear infinite paused;
+    }
+
+    .album-art.playing {
+      animation-play-state: running;
+    }
+
+    @keyframes spin {
+      100% {
+        transform: rotate(360deg);
+      }
+    }
+
+    .song-title {
+      font-size: 1.5rem;
+      font-weight: bold;
+      margin-bottom: 10px;
+    }
+
+    .audio-player {
+      width: 100%;
+    }
+
+    audio {
+      width: 100%;
+      margin-top: 10px;
+    }
+
+    .back-btn {
+      position: absolute;
+      top: 20px;
+      left: 20px;
+      color: #fff;
+      text-decoration: none;
+      background-color: #1db954;
+      padding: 8px 16px;
+      border-radius: 20px;
+      font-size: 0.9rem;
+      transition: background-color 0.3s ease;
+    }
+
+    .back-btn:hover {
+      background-color: #1ed760;
+    }
+  </style>
+</head>
+<body>
+  <a href="taylor.html" class="back-btn">← Home</a>
+
+  <div class="container">
+    <div class="album-art" id="albumArt">
+       <a href="player.html?song=taylor1.mp3&title=Love Story&cover=love.jpg"></a>
+
+    </div>
+    <div class="song-title" id="songTitle">Loading...</div>
+    <div class="audio-player">
+      <audio id="audioPlayer" controls autoplay>
+        Your browser does not support the audio element.
+      </audio>
+    </div>
+  </div>
+
+  <script>
+    const urlParams = new URLSearchParams(window.location.search);
+    const song = urlParams.get('song');
+    const title = urlParams.get('title');
+    const cover = urlParams.get('cover'); // new param for album cover
+
+    const songTitle = document.getElementById('songTitle');
+    const audioPlayer = document.getElementById('audioPlayer');
+    const albumArt = document.getElementById('albumArt');
+
+    if (song && title) {
+      songTitle.textContent = title;
+      audioPlayer.src = song;
+
+      if (cover) {
+        albumArt.style.backgroundImage = `url('${cover}')`;
+      }
+    } else {
+      songTitle.textContent = "No song selected.";
+    }
+
+    audioPlayer.addEventListener('play', () => {
+      albumArt.classList.add('playing');
+    });
+
+    audioPlayer.addEventListener('pause', () => {
+      albumArt.classList.remove('playing');
+    });
+  </script>
+</body>
+</html>
